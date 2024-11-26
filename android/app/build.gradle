@@ -1,5 +1,8 @@
 plugins {
     id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
     id "kotlin-android"
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id "dev.flutter.flutter-gradle-plugin"
@@ -19,8 +22,6 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8
     }
 
-
-
    defaultConfig {
     applicationId "com.example.tiktok_app" // Replace with your package name
     minSdkVersion 23 // Increase this from 21 to 23
@@ -38,7 +39,6 @@ android {
         }
     }
 }
-
 
 flutter {
     source = "../.."
