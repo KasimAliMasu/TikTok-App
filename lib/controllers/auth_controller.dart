@@ -59,11 +59,34 @@ class AuthController extends GetxController {
             .doc(cred.user!.uid)
             .set(user.toJson());
       } else {
-        Get.snackbar('Error Creating Account', 'please enter all the fields');
+        Get.snackbar(
+          'Error Creating Account',
+          'please enter all the fields',
+        );
       }
     } catch (e) {
       Get.snackbar(
         'Error Creating Account',
+        e.toString(),
+      );
+    }
+  }
+
+  void loginUser(String email, String password) async {
+    try {
+      if (password.isNotEmpty && email.isNotEmpty) {
+        await firebaseAuth.signInWithEmailAndPassword(
+            email: email, password: password);
+        print('log success');
+      } else {
+        Get.snackbar(
+          'Error login in',
+          'please enter all the fields',
+        );
+      }
+    } catch (e) {
+      Get.snackbar(
+        'Error login in',
         e.toString(),
       );
     }

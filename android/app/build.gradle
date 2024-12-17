@@ -9,9 +9,8 @@ plugins {
 }
 
 android {
-    namespace = "com.example.tiktok_app"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    namespace "com.example.tiktok_app" // Replace with your actual app ID
+    compileSdkVersion 34
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -21,14 +20,13 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
     }
-
-   defaultConfig {
-    applicationId "com.example.tiktok_app" // Replace with your package name
-    minSdkVersion 23 // Increase this from 21 to 23
-    targetSdkVersion 33 // Or the latest version you're targeting
-    versionCode 1
-    versionName "1.0"
-}
+    defaultConfig {
+        applicationId "com.example.tiktok_app" // Replace with your actual app ID
+        minSdkVersion 23
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+    }
 
 
     buildTypes {
